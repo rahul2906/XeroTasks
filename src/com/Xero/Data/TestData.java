@@ -11,7 +11,7 @@ public class TestData {
 	//Task2
 	public static String userid;
 	
-	//To initialize
+	//To initialize the values
 	static
 	{
 		firstName = "FirstName";
@@ -20,5 +20,4 @@ public class TestData {
 		password = "abcdef123";
 		userid= "testq282@gmail.com";
 	}
-
 }

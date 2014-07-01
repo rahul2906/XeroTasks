@@ -6,9 +6,11 @@ import java.util.List;
 import org.apache.commons.collections.CollectionUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.Xero.Data.TestData;
@@ -24,11 +26,21 @@ public class Task2 {
 
 	/*Before function Test to login into the Page and reset the Demo organisation and goto Repeating
 	  Invoices dashboard*/
+	@Parameters ({"browser"})
 	@BeforeTest
-	public void createsession()
+	public void createsession(String browser)
 	{
 		//Login into the Xero Page
-		this.driver = new FirefoxDriver();	
+		driver=null; 
+		if(browser.equals("firefox"))  
+		{  	
+			this.driver = new FirefoxDriver();	
+		}
+		else if (browser.equals("ie"))
+		{
+			System.setProperty("webdriver.ie.driver","C:\\Users\\Rk\\Desktop\\Automation Selenium Drivers\\Work\\workspace\\Reference Libraries\\Task\\IEDriverServer.exe");
+			driver = new InternetExplorerDriver();
+		}
 		LoginPage login = new LoginPage(driver);
 		OrganisationDashboard org = null;
 		/*There are 2 possible outcomes of the Login Page.

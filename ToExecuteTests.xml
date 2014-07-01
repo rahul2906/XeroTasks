@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TestingSuite" parallel="none">
-  <test name="Test1">
+  <test name="Test1Task1">
+  <parameter name="browser" value="firefox">
     <classes>
       <class name="com.Xero.Tests.Task1"/>
     </classes>
+   </parameter>
+   </test>
+    <test name="Test2Task2">
+  <parameter name="browser" value="firefox">
+    <classes>
+      <class name="com.Xero.Tests.Task2"/>
+    </classes>
+    </parameter>
   </test>
 </suite>
