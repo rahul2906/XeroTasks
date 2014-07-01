@@ -27,7 +27,7 @@ public class MailerInbox extends GenericFunctions{
 	public String getLink() {
 		//this.getWhenVisible("rendermail",30,driver);
 		this.sleep(5);
-		driver.switchTo().frame(1);
+		driver.switchTo().frame(driver.findElement(By.cssSelector("#mailshowdivbody > iframe")));
 		return(driver.findElement(regLink).getText());	
 	}
 

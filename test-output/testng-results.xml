@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="80649" started-at="2014-07-01T04:05:04Z" finished-at="2014-07-01T04:06:25Z">
+  <suite name="Default suite" duration-ms="112757" started-at="2014-07-01T09:22:47Z" finished-at="2014-07-01T09:24:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="80649" started-at="2014-07-01T04:05:04Z" finished-at="2014-07-01T04:06:25Z">
-      <class name="com.Xero.Tests.Task2">
-        <test-method status="PASS" signature="createsession()[pri:0, instance:com.Xero.Tests.Task2@2d6d8735]" name="createsession" is-config="true" duration-ms="47348" started-at="2014-07-01T16:05:04Z" finished-at="2014-07-01T16:05:51Z">
+    <test name="Default test" duration-ms="112757" started-at="2014-07-01T09:22:47Z" finished-at="2014-07-01T09:24:40Z">
+      <class name="com.Xero.Tests.Task1">
+        <test-method status="PASS" signature="createsession()[pri:0, instance:com.Xero.Tests.Task1@2d6d8735]" name="createsession" is-config="true" duration-ms="4438" started-at="2014-07-01T21:22:47Z" finished-at="2014-07-01T21:22:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createsession -->
-        <test-method status="PASS" signature="createNewInvoice()[pri:0, instance:com.Xero.Tests.Task2@2d6d8735]" name="createNewInvoice" duration-ms="10859" started-at="2014-07-01T16:05:51Z" finished-at="2014-07-01T16:06:02Z">
+        <test-method status="PASS" signature="task1()[pri:0, instance:com.Xero.Tests.Task1@2d6d8735]" name="task1" duration-ms="108111" started-at="2014-07-01T21:22:52Z" finished-at="2014-07-01T21:24:40Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createNewInvoice -->
-        <test-method status="PASS" signature="emptyFieldValidation()[pri:0, instance:com.Xero.Tests.Task2@2d6d8735]" name="emptyFieldValidation" duration-ms="11320" started-at="2014-07-01T16:06:02Z" finished-at="2014-07-01T16:06:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- emptyFieldValidation -->
-        <test-method status="PASS" signature="itemDropDownValidation()[pri:0, instance:com.Xero.Tests.Task2@2d6d8735]" name="itemDropDownValidation" duration-ms="4438" started-at="2014-07-01T16:06:13Z" finished-at="2014-07-01T16:06:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- itemDropDownValidation -->
-        <test-method status="PASS" signature="tablevalidation()[pri:0, instance:com.Xero.Tests.Task2@2d6d8735]" name="tablevalidation" duration-ms="6195" started-at="2014-07-01T16:06:18Z" finished-at="2014-07-01T16:06:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tablevalidation -->
-        <test-method status="PASS" signature="closing()[pri:0, instance:com.Xero.Tests.Task2@2d6d8735]" name="closing" is-config="true" duration-ms="472" started-at="2014-07-01T16:06:24Z" finished-at="2014-07-01T16:06:25Z">
+        </test-method> <!-- task1 -->
+        <test-method status="PASS" signature="closing()[pri:0, instance:com.Xero.Tests.Task1@2d6d8735]" name="closing" is-config="true" duration-ms="197" started-at="2014-07-01T21:24:40Z" finished-at="2014-07-01T21:24:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closing -->
-      </class> <!-- com.Xero.Tests.Task2 -->
+      </class> <!-- com.Xero.Tests.Task1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
