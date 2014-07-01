@@ -51,6 +51,7 @@ public class NewRepInvoice extends GenericFunctions{
 	@FindBy(css= "a[href*=SearchRepeating] >span")
 	public static WebElement cancel;
 
+	//Constructor to use PageFactory and get all the objects on the page and verify title
 	public NewRepInvoice(WebDriver driver)
 	{
 		this.driver=driver;
@@ -63,18 +64,21 @@ public class NewRepInvoice extends GenericFunctions{
 		cancel.click();		
 		return new RepeatingInvoicesDash(driver);
 	}
-
+	//To get the list of items from the drop down list of the table from the first row
 	public List<String> getItemList()
 	{
-		//To get the list of items from the drop down list of the table from the first row
 		List<WebElement> rows=table.findElements(By.tagName("tr"));
 		List <String> txt =  new ArrayList<String>();
 		for (WebElement row : rows)
 		{
+			//Get all the columns for the row
 			List<WebElement> cols=row.findElements(By.xpath("td"));
+			//Click on column 1 (Item ID)
 			cols.get(1).click();
 			sleep(1);
+			//Click on the drop down arrow
 			tableItemDropDown.click();
+			//Add all the text in the elements to the table
 			for (WebElement element : tableItemdroplist)
 			{	
 				txt.add(element.getText());

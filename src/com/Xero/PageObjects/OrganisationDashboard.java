@@ -45,7 +45,7 @@ public class OrganisationDashboard extends GenericFunctions{
 	public MyXeroHome gotoXeroHomePage()
 	{	
 		orgNameLink.click();
-		this.isVisible(myXeroLink,10,driver).click();
+		this.isVisible(myXeroLink,60,driver).click();
 		return new MyXeroHome(driver);
 	}
 	public String returnPageHeader()
@@ -55,12 +55,12 @@ public class OrganisationDashboard extends GenericFunctions{
 	public SalesDashboard NavigateToSales()
 	{
 		accountMenuLink.click();
-		this.isVisible(salesMenuLink,20,driver).click();
+		this.isVisible(salesMenuLink,60,driver).click();
 		return new SalesDashboard(driver);
 	}
 	public InventoryItems navigateToInventory(){
 		settingMenuLink.click();
-		this.isVisible(inventoryLink,20,driver).click();
+		this.isVisible(inventoryLink,60,driver).click();
 		return new InventoryItems(driver);
 	}
 }

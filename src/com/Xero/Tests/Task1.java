@@ -11,29 +11,34 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.Xero.Data.Config;
 import com.Xero.Data.TestData;
 import com.Xero.DataObjects.Login;
 import com.Xero.PageObjects.*;
 
 
 public class Task1 {
-
+	
 	WebDriver driver;
+
+	/*
+	 * Browser is Parameterised to pull in values from the XML and launch the appropriate browser
+	 */
 	@Parameters ({"browser"})
 	@BeforeTest
 	public void createsession(String browser)	{
 		driver=null; 
-		if(browser.equals("firefox"))  
+		if(browser.equals("FF"))  
 		{  	
 			this.driver = new FirefoxDriver();	
 		}
-		else if (browser.equals("ie"))
+		else if (browser.equals("IE"))
 		{
+			Config.initialize();
 			driver = new InternetExplorerDriver();
 		}
 	}
 
-	
 	
 	@Test
 	public void task1() {
@@ -58,8 +63,7 @@ public class Task1 {
 		//Setup the password as Test1234
 		Object object1 = activate.activateAccount(TestData.password);
 		OrganisationDashboard org;
-		
-		
+				
 		/*Two possible pages can be sent back
 		1. AddYourOrgansiation Page where the website forces to create a organisation customer
 		2. AddYourOrgainsation2 Page where the website allows to directly goto the Demo Organisation.
@@ -95,8 +99,7 @@ public class Task1 {
 		sales.navigateRepeatingInvoices();
 	}
 	
-	
-	
+	//Close down the test
 	@AfterTest
 	public void closing()
 	{

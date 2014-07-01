@@ -19,7 +19,7 @@ public class AddYourOrganisation extends GenericFunctions {
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
-		Assert.assertTrue(this.titleContains("Add your organisation",60,driver)); 
+		Assert.assertTrue(this.titleContains("Add your organisation",90,driver)); 
 	}
 	public OrganisationDashboard addOrg(String org){
 		orgName.sendKeys(org);

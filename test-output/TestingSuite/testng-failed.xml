@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [TestingSuite]" parallel="none">
-  <parameter name="browser" value="firefox"/>
-  <test name="Test1(failed)" parallel="none">
-    <parameter name="browser" value="firefox"/>
+  <parameter name="browser" value="FF"/>
+  <test name="Test2Task2(failed)" parallel="none">
+    <parameter name="browser" value="FF"/>
     <classes>
+      <class name="com.Xero.Tests.Task2">
+        <methods>
+          <include name="createNewInvoice"/>
+          <include name="emptyFieldValidation"/>
+          <include name="createsession"/>
+          <include name="itemDropDownValidation"/>
+          <include name="tablevalidation"/>
+        </methods>
+      </class> <!-- com.Xero.Tests.Task2 -->
       <class name="com.Xero.Tests.Task1">
         <methods>
-          <include name="task1"/>
           <include name="closing"/>
           <include name="createsession"/>
         </methods>
       </class> <!-- com.Xero.Tests.Task1 -->
     </classes>
-  </test> <!-- Test1(failed) -->
+  </test> <!-- Test2Task2(failed) -->
 </suite> <!-- Failed suite [TestingSuite] -->

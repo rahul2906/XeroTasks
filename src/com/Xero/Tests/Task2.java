@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.Xero.Data.Config;
 import com.Xero.Data.TestData;
 import com.Xero.DataObjects.Inventory;
 import com.Xero.PageObjects.*;
@@ -30,15 +31,16 @@ public class Task2 {
 	@BeforeTest
 	public void createsession(String browser)
 	{
+	
 		//Login into the Xero Page
 		driver=null; 
-		if(browser.equals("firefox"))  
+		if(browser.equals("FF"))  
 		{  	
 			this.driver = new FirefoxDriver();	
 		}
-		else if (browser.equals("ie"))
+		else if (browser.equals("IE"))
 		{
-			System.setProperty("webdriver.ie.driver","C:\\Users\\Rk\\Desktop\\Automation Selenium Drivers\\Work\\workspace\\Reference Libraries\\Task\\IEDriverServer.exe");
+			Config.initialize();
 			driver = new InternetExplorerDriver();
 		}
 		LoginPage login = new LoginPage(driver);
@@ -58,23 +60,23 @@ public class Task2 {
 			MyXeroHome home=((OrganisationDashboard) page).gotoXeroHomePage();
 			org=home.resetDemo();
 		}
-		
+
 		//Navigate to the Inventory page and fetch all the details of the inventory available.
 		InventoryItems inv= org.navigateToInventory();
 		inventory=inv.getPriceList();
-		
+
 		//Navigate to Repeating Invoices Page
 		SalesDashboard sales = inv.NavigateToSales();
 		dashboard=sales.navigateRepeatingInvoices();
 	}
-	
+
 	/* Test to verify the 5 validation error messages to be displayed indicating mandatory fields
 	 */
 	@Test
 	public void emptyFieldValidation()
 	{
 		invoice = dashboard.navigateNewRepeatingInv();
-		
+
 		//Define the list of Validation messages
 		List<String> messages = Arrays.asList(
 				"Invoice Date cannot be empty.",
@@ -83,15 +85,15 @@ public class Task2 {
 				"Description cannot be empty.",
 				"Invoice to cannot be empty.");
 		invoice.clickSave();
-		
+
 		//Fetch the error messages
 		List<String> error = invoice.geterrorMessage();
-		
+
 		//Compare the error messages expected and actual
 		Assert.assertTrue(CollectionUtils.isEqualCollection(error, messages)); 
 		dashboard= invoice.clickCancel();
 	}
-	
+
 	/*
 	 * Verify the list of items displayed in the items drop down in the table of RepeatingInvoices
 	 * The list of items is validated against a list present on the Inventories screen. 
@@ -109,7 +111,7 @@ public class Task2 {
 		{
 			Assert.assertTrue(inventoryid.contains(inventory[i].getItemCode()),"Items present on Inventory screen not present on repeating Invoice Items drop down");		
 		}
-		
+
 		//Click on cancel for the next test to run
 		dashboard= invoice.clickCancel();
 	}
@@ -146,7 +148,7 @@ public class Task2 {
 		invoice.createinvoice(inventory[0].getItemCode());
 		Assert.assertTrue(driver.getPageSource().contains("Repeating Template Saved"));
 	}
-	
+
 	//End of test close the driver
 	@AfterTest
 	public void closing()
@@ -155,4 +157,3 @@ public class Task2 {
 		this.driver.quit();
 	}
 }
-
